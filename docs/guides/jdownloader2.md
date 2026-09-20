@@ -15,13 +15,14 @@ Mylar can delegate web/DDL file downloads to [JDownload2](https://jdownloader.or
 - _Make sure not to expose the JD2 instance to the internet_
 
 ### Within Mylar:
-- Enable JD2
-- Set the JD2 URL to **http://JD2_IP:PORT**
-  - Hostname can be used as well, just make sure to add the port or reverse proxy it
-- Set the JD2 download destination
-  - This location must match in _both_ Mylar and JD2
-  - If using containers, the download location must be mapped the same
-    - Let's say for Mylar you have:
-      - volumes:
-        - /media/downloads/JD2:/JD2
-    - Set the same in your JD2 compose so that _for both containers, the locations on the right side match_
+- _Config > Search providers_
+  - Enable **Send to JD2**
+  - Set the JD2 URL to **http://JD2_IP:PORT**
+    - Hostname can be used as well, just make sure to add the port or reverse proxy it
+  - Set the JD2 download path/destination
+    - This location _must_ match in _both_ Mylar and JD2
+    - If using containers, the download location must be mapped the same
+      - Let's say for Mylar you have:
+        - volumes:
+          - /media/downloads/JD2:/JD2
+      - Set the same in your JD2 compose so that _for both containers, the locations on the right side match_
